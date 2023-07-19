@@ -4,12 +4,8 @@ import Home from '../src/Home'
 import Login from '../src/Login'
 import Mentor from '../src/Mentor'
 import SignIn from '../src/SignIn'
-import Welcome from '../src/Welcome'
 
 const screens = {
-  SkillSage: {
-    screen: Welcome,
-  },
   LogIn: {
     screen: Login,
   },
