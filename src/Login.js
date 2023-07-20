@@ -1,13 +1,15 @@
-import { Image, StyleSheet, Text, View, TextInput, Button } from 'react-native'
+import { Image, StyleSheet, Text, View, TextInput, Button, ScrollView } from 'react-native'
 
 export default function Login({ navigation }) {
   const pressHandler = () => navigation.navigate('Home')
   const handleSignin = () => navigation.navigate('SignIn')
-  const pressHandler2 = () => navigation.navigate('ForgotPassword')
 
   return (
+    <ScrollView>
     <View style={styles.container}>
-      <Image source={require('../assets/Login.png')} style={styles.img} />
+      <Image source={require('../assets/Welcome.png')} style={styles.img} />
+        <Text style={styles.headText}>Welcome to Skill Sage!!</Text>
+        <Text style={styles.text}>Find your perfect mentor within clicks</Text>
       <View>
         <Text style={styles.headText}>Login</Text>
       </View>
@@ -19,7 +21,7 @@ export default function Login({ navigation }) {
           <TextInput placeholder='Password' secureTextEntry={true} />
         </View>
         <View>
-          <Text style={styles.text1} onPress={pressHandler2}>Forget Password?</Text>
+          <Text style={styles.text1}>Forget Password?</Text>
         </View>
         <View style={styles.btn}>
           <Button title='Login' color={'#ffc700'} onPress={pressHandler} />
@@ -34,6 +36,7 @@ export default function Login({ navigation }) {
         </View>
       </View>
     </View>
+    </ScrollView>
   )
 }
 
@@ -42,19 +45,21 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   innercontainer: {
-    marginHorizontal: 30,
+    marginHorizontal: 20,
   },
   img: {
-    marginTop: 0,
-    paddingTop: 0,
+      marginTop: 50,
+      marginLeft: 'auto',
+      marginRight: 'auto',
+      paddingTop: 0,
   },
   headText: {
     marginLeft: 'auto',
     marginRight: 'auto',
-    marginTop: 25,
-    marginBottom: 30,
+//    marginTop: 20,
+    marginBottom: 50,
     color: '#006E7F',
-    fontSize: 50,
+    fontSize: 24,
     fontWeight: 500,
   },
   text: {
@@ -69,11 +74,10 @@ const styles = StyleSheet.create({
     color: '#006E7F',
     fontWeight: 300,
     textDecorationLine: 'underline',
-    paddingTop: 15,
   },
   input: {
     marginVertical: 10,
-    padding: 15,
+    padding: 10,
     borderColor: '#ccc',
     borderWidth: 1,
   },
