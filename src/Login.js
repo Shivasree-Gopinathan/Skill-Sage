@@ -3,6 +3,7 @@ import { Image, StyleSheet, Text, View, TextInput, Button } from 'react-native'
 export default function Login({ navigation }) {
   const pressHandler = () => navigation.navigate('Home')
   const handleSignin = () => navigation.navigate('SignIn')
+  const pressHandler2 = () => navigation.navigate('ForgotPassword')
 
   return (
     <View style={styles.container}>
@@ -18,7 +19,7 @@ export default function Login({ navigation }) {
           <TextInput placeholder='Password' secureTextEntry={true} />
         </View>
         <View>
-          <Text style={styles.text1}>Forget Password?</Text>
+          <Text style={styles.text1} onPress={pressHandler2}>Forget Password?</Text>
         </View>
         <View style={styles.btn}>
           <Button title='Login' color={'#ffc700'} onPress={pressHandler} />
