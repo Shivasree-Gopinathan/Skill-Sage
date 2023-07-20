@@ -44,14 +44,14 @@ const styles = StyleSheet.create({
     marginHorizontal: 30,
   },
   img: {
-    marginTop:0,
+    marginTop: 0,
     paddingTop: 0,
   },
   headText: {
     marginLeft: 'auto',
     marginRight: 'auto',
     marginTop: 25,
-    marginBottom:  30,
+    marginBottom: 30,
     color: '#006E7F',
     fontSize: 50,
     fontWeight: 500,
