@@ -1,42 +1,50 @@
-import { Image, StyleSheet, Text, View, TextInput, Button, ScrollView } from 'react-native'
+import {
+  Image,
+  StyleSheet,
+  Text,
+  View,
+  TextInput,
+  Button,
+  ScrollView,
+} from 'react-native'
 
 export default function SignIn({ navigation }) {
   const pressHandler = () => navigation.navigate('Home')
-  const handleSignin = () => navigation.navigate('SignIn')
+  const handleLogin = () => navigation.navigate('Login')
 
   return (
- <ScrollView>
-    <View style={styles.container}>
-      <Image source={require('../assets/Login.png')} style={styles.img} />
-      <View>
-        <Text style={styles.headText}>Signup</Text>
-      </View>
-      <View style={styles.innercontainer}>
-        <View style={styles.input}>
-          <TextInput placeholder='Username' />
-        </View>
-        <View style={styles.input}>
-          <TextInput placeholder='Email ID' />
-        </View>
-        <View style={styles.input}>
-          <TextInput placeholder='Password' />
-        </View>
-        <View style={styles.input}>
-          <TextInput placeholder='Confirm Password' />
-        </View>
-        <View style={styles.btn}>
-          <Button title='Signup' color={'#ffc700'} onPress={pressHandler} />
-        </View>
+    <ScrollView>
+      <View style={styles.container}>
+        <Image source={require('../assets/Login.png')} style={styles.img} />
         <View>
-          <Text style={styles.text}>
-            Have an account?{' '}
-            <Text style={styles.text1} onPress={handleSignin}>
-              Login
+          <Text style={styles.headText}>Signup</Text>
+        </View>
+        <View style={styles.innercontainer}>
+          <View style={styles.input}>
+            <TextInput placeholder='Username' />
+          </View>
+          <View style={styles.input}>
+            <TextInput placeholder='Email ID' />
+          </View>
+          <View style={styles.input}>
+            <TextInput placeholder='Password' />
+          </View>
+          <View style={styles.input}>
+            <TextInput placeholder='Confirm Password' />
+          </View>
+          <View style={styles.btn}>
+            <Button title='Signup' color={'#ffc700'} onPress={pressHandler} />
+          </View>
+          <View>
+            <Text style={styles.text}>
+              Have an account?{' '}
+              <Text style={styles.text1} onPress={handleLogin}>
+                Login
+              </Text>
             </Text>
-          </Text>
+          </View>
         </View>
       </View>
-    </View>
     </ScrollView>
   )
 }
