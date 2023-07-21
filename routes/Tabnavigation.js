@@ -1,11 +1,11 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import { View, Text, Image } from 'react-native'
+import { Image } from 'react-native'
 import home from '../assets/home.png'
-import search from '../assets/search.png'
-import fav from '../assets/favourite.png'
+import course from '../assets/course.png'
+import profile from '../assets/profile.png'
 import base from '../src/Home'
 import like from '../src/Favourite'
-import look from '../src/Search'
+import look from '../src/Courses'
 
 const Tab = createBottomTabNavigator()
 
@@ -19,7 +19,7 @@ export default function Tabnavigation() {
       }}
     >
       <Tab.Screen
-        name='SkillSage'
+        name='home'
         component={base}
         options={{
           tabBarLabel: 'Home',
@@ -38,10 +38,10 @@ export default function Tabnavigation() {
         name='Search Course'
         component={look}
         options={{
-          tabBarLabel: 'Search',
+          tabBarLabel: 'Search Course',
           tabBarIcon: ({ color, size }) => (
             <Image
-              source={search}
+              source={course}
               style={{
                 width: 35,
                 height: 35,
@@ -51,13 +51,13 @@ export default function Tabnavigation() {
         }}
       />
       <Tab.Screen
-        name='Favourite Courses'
+        name='Profile'
         component={like}
         options={{
-          tabBarLabel: 'Favourites',
+          tabBarLabel: 'Profile',
           tabBarIcon: ({ color, size }) => (
             <Image
-              source={fav}
+              source={profile}
               style={{
                 width: 35,
                 height: 35,

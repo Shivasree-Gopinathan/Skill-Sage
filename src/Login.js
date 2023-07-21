@@ -9,7 +9,7 @@ import {
 } from 'react-native'
 
 export default function Login({ navigation }) {
-  const pressHandler = () => navigation.navigate('Home')
+  const pressHandler = () => navigation.navigate('SkillSage')
   const handleSignin = () => navigation.navigate('SignIn')
   const handleForgot = () => navigation.navigate('ForgotPassword')
 
