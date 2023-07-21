@@ -5,6 +5,7 @@ export default function ForgotPassword({ navigation }) {
   const handleLogin = () => navigation.navigate('Login')
 
   return (
+    
     <View style={styles.container}>
       <Image source={require('../assets/ForgotPassword.png')} style={styles.img} />
       <View>
@@ -33,21 +34,25 @@ export default function ForgotPassword({ navigation }) {
         </View>
       </View>
     </View>
+    
   )
 }
 
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#fff',
+    flex:1,
   },
   innercontainer: {
     marginHorizontal: 30,
   },
   img: {
-    marginTop: -10,
-    paddingTop: -10,
-    height :200,
-    width:200,
+    marginTop: 50,
+    paddingTop: -50,
+    marginLeft:"auto", 
+    marginRight:"auto",
+    height :300,
+    width:300,
   },
   headText: {
     marginLeft: 'auto',
