@@ -4,7 +4,7 @@ import home from '../assets/home.png'
 import course from '../assets/course.png'
 import profile from '../assets/profile.png'
 import base from '../src/Home'
-import like from '../src/Favourite'
+import like from '../src/Profile'
 import look from '../src/Courses'
 
 const Tab = createBottomTabNavigator()
@@ -15,7 +15,7 @@ export default function Tabnavigation() {
       initialRouteName='Home'
       screenOptions={{
         headerShown: false,
-        tabBarActiveTintColor: '#e91e63',
+        tabBarActiveTintColor: '#006e7f',
       }}
     >
       <Tab.Screen
