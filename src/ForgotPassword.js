@@ -14,11 +14,18 @@ export default function ForgotPassword({ navigation }) {
         <View style={styles.input}>
           <TextInput placeholder='Email ID' />
         </View>
+        {/* <View style={styles.input}>
+          <TextInput placeholder='Password' secureTextEntry={true} />
+        </View>
+        <View>
+          <Text style={styles.text1}>Forget Password?</Text>
+        </View> */}
         <View style={styles.btn}>
           <Button title='Reset' color={'#ffc700'} onPress={pressHandler1} />
         </View>
         <View>
           <Text style={styles.text}>
+            {' '}
             <Text style={styles.text1} onPress={handleLogin}>
               Back to Login
             </Text>
@@ -37,8 +44,8 @@ const styles = StyleSheet.create({
     marginHorizontal: 30,
   },
   img: {
-    marginTop: 0,
-    paddingTop: 0,
+    marginTop: -10,
+    paddingTop: -10,
   },
   headText: {
     marginLeft: 'auto',
@@ -54,7 +61,7 @@ const styles = StyleSheet.create({
     marginRight: 'auto',
     marginBottom: 30,
     color: '#006E7F',
-    fontWeight: 300,
+    fontWeight: 700,
   },
   text1: {
     marginLeft: 'auto',
