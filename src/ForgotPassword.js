@@ -46,6 +46,8 @@ const styles = StyleSheet.create({
   img: {
     marginTop: -10,
     paddingTop: -10,
+    height :200,
+    width:200,
   },
   headText: {
     marginLeft: 'auto',
