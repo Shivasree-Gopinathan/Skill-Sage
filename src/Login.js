@@ -65,8 +65,6 @@ const styles = StyleSheet.create({
   headText: {
     marginLeft: 'auto',
     marginRight: 'auto',
-    //  marginTop: 20,
-    // marginBottom: 50,
     color: '#006E7F',
     fontSize: 24,
     fontWeight: 500,

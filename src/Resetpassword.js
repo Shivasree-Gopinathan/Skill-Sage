@@ -1,22 +1,30 @@
-import { View, Text, StyleSheet, Button, Linking } from 'react-native'
+import { View, Text, StyleSheet, Button, Linking, Image } from 'react-native'
 import React from 'react'
+import mail from '../assets/mail.png'
 
-export default function Resetpassword() {
+export default function Resetpassword({ navigation }) {
   const pressHandler = () => Linking.openURL('https://accounts.google.com')
+  const handleLogin = () => navigation.navigate('Login')
 
   return (
     <View style={styles.container}>
       <Text style={styles.headText}>Check your</Text>
-      <Text style={styles.headText}>mail</Text>
+      <Text style={styles.headText}>Mail</Text>
       <View>
         <Text style={styles.text}>
           We have sent a reset password reset to your email address.
         </Text>
+        <View>
+          <Image source={mail} style={styles.img} />
+        </View>
         <View style={styles.btn}>
           <Button title='Go to mail' color={'#ffc700'} onPress={pressHandler} />
         </View>
         <Text style={styles.text}>
-          Try to Login again? <Text style={styles.text1}>Login</Text>
+          Try to Login again?{' '}
+          <Text style={styles.text1} onPress={handleLogin}>
+            Login
+          </Text>
         </Text>
       </View>
     </View>
@@ -46,9 +54,15 @@ const styles = StyleSheet.create({
     textDecorationLine: 'underline',
   },
   btn: {
-    marginTop: 40,
     marginBottom: 20,
     marginLeft: '5%',
     marginRight: '5%',
+  },
+  img: {
+    marginTop: 10,
+    width: '80%',
+    height: '70%',
+    marginLeft: 'auto',
+    marginRight: 'auto',
   },
 })

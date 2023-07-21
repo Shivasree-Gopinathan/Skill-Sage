@@ -1,6 +1,6 @@
 import { Image, StyleSheet, Text, View, TextInput, Button } from 'react-native'
 
-export default function Login({ navigation }) {
+export default function ForgotPassword({ navigation }) {
   const pressHandler1 = () => navigation.navigate('ResetPassword')
   const handleLogin = () => navigation.navigate('Login')
 
