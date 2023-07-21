@@ -16,7 +16,7 @@ export default function AuthStack() {
     <Stack.Navigator screenOptions={{ headerShown: true }}>
       <Stack.Screen name='Login' component={Login} />
       <Stack.Screen name='SignIn' component={SignIn} />
-      <Stack.Screen name='Home' component={(Home, Tabnav)} />
+      <Stack.Screen name='SkillSage' component={(Home, Tabnav)} />
       <Stack.Screen name='Mentor' component={Mentor} />
       <Stack.Screen name='ForgotPassword' component={ForgotPassword} />
       <Stack.Screen name='ResetPassword' component={Resetpassword} />
