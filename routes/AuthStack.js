@@ -7,6 +7,7 @@ import SignIn from '../src/SignIn'
 import ForgotPassword from '../src/ForgotPassword'
 import Tabnav from '../routes/Tabnavigation'
 import Resetpassword from '../src/Resetpassword'
+import Cpage from '../src/Cpage'
 
 const Stack = createNativeStackNavigator()
 
@@ -19,6 +20,7 @@ export default function AuthStack() {
       <Stack.Screen name='Mentor' component={Mentor} />
       <Stack.Screen name='ForgotPassword' component={ForgotPassword} />
       <Stack.Screen name='ResetPassword' component={Resetpassword} />
+       <Stack.Screen name='Cpage' component={Cpage} /> 
     </Stack.Navigator>
   )
 }
