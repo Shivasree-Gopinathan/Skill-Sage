@@ -1,41 +1,49 @@
-import { Image, StyleSheet, Text, View, TextInput, Button, ScrollView } from 'react-native'
+import {
+  Image,
+  StyleSheet,
+  Text,
+  View,
+  TextInput,
+  Button,
+  ScrollView,
+} from 'react-native'
 
 export default function Login({ navigation }) {
   const pressHandler = () => navigation.navigate('Home')
   const handleSignin = () => navigation.navigate('SignIn')
+  const handleForgot = () => navigation.navigate('ForgotPassword')
 
   return (
     <ScrollView>
-    <View style={styles.container}>
-      <Image source={require('../assets/Welcome.png')} style={styles.img} />
+      <View style={styles.container}>
+        <Image source={require('../assets/Welcome.png')} style={styles.img} />
         <Text style={styles.headText}>Welcome to Skill Sage!!</Text>
         <Text style={styles.text}>Find your perfect mentor within clicks</Text>
-      <View>
-        <Text style={styles.headText}>Login</Text>
-      </View>
-      <View style={styles.innercontainer}>
-        <View style={styles.input}>
-          <TextInput placeholder='Email ID' />
-        </View>
-        <View style={styles.input}>
-          <TextInput placeholder='Password' secureTextEntry={true} />
-        </View>
-        <View>
-          <Text style={styles.text1}>Forget Password?</Text>
-        </View>
-        <View style={styles.btn}>
-          <Button title='Login' color={'#ffc700'} onPress={pressHandler} />
-        </View>
-        <View>
-          <Text style={styles.text}>
-            Don't have an account?{' '}
-            <Text style={styles.text1} onPress={handleSignin}>
-              Sign In
+        <View style={styles.innercontainer}>
+          <View style={styles.input}>
+            <TextInput placeholder='Email ID' />
+          </View>
+          <View style={styles.input}>
+            <TextInput placeholder='Password' secureTextEntry={true} />
+          </View>
+          <View>
+            <Text style={styles.text1} onPress={handleForgot}>
+              Forget Password?
             </Text>
-          </Text>
+          </View>
+          <View style={styles.btn}>
+            <Button title='Login' color={'#ffc700'} onPress={pressHandler} />
+          </View>
+          <View>
+            <Text style={styles.text}>
+              Don't have an account?{' '}
+              <Text style={styles.text1} onPress={handleSignin}>
+                SignIn
+              </Text>
+            </Text>
+          </View>
         </View>
       </View>
-    </View>
     </ScrollView>
   )
 }
@@ -43,21 +51,22 @@ export default function Login({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#fff',
+    flex: 1,
   },
   innercontainer: {
     marginHorizontal: 20,
   },
   img: {
-      marginTop: 50,
-      marginLeft: 'auto',
-      marginRight: 'auto',
-      paddingTop: 0,
+    marginTop: 50,
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    paddingTop: 0,
   },
   headText: {
     marginLeft: 'auto',
     marginRight: 'auto',
-//    marginTop: 20,
-    marginBottom: 50,
+    //  marginTop: 20,
+    // marginBottom: 50,
     color: '#006E7F',
     fontSize: 24,
     fontWeight: 500,
@@ -65,7 +74,7 @@ const styles = StyleSheet.create({
   text: {
     marginLeft: 'auto',
     marginRight: 'auto',
-    marginBottom: 30,
+    marginBottom: '20%',
     color: '#006E7F',
     fontWeight: 300,
   },

@@ -57,14 +57,14 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
   },
   img: {
-    marginTop: -10,
+    marginTop: -50,
     paddingTop: 0,
   },
   headText: {
     marginLeft: 'auto',
     marginRight: 'auto',
     marginTop: 20,
-    marginBottom: 50,
+    marginBottom: 10,
     color: '#006E7F',
     fontSize: 24,
     fontWeight: 500,
@@ -89,8 +89,8 @@ const styles = StyleSheet.create({
     borderWidth: 1,
   },
   btn: {
-    marginTop: 40,
+    marginTop: 10,
     marginBottom: 20,
-    // padding: 10,
+    width: '100%',
   },
 })

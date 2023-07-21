@@ -1,8 +1,8 @@
 import { Image, StyleSheet, Text, View, TextInput, Button } from 'react-native'
 
 export default function Login({ navigation }) {
-  const pressHandler1 = () => navigation.navigate('Home')
-  const handleLogin = () => navigation.navigate('')
+  const pressHandler1 = () => navigation.navigate('ResetPassword')
+  const handleLogin = () => navigation.navigate('Login')
 
   return (
     <View style={styles.container}>
@@ -14,18 +14,11 @@ export default function Login({ navigation }) {
         <View style={styles.input}>
           <TextInput placeholder='Email ID' />
         </View>
-        {/* <View style={styles.input}>
-          <TextInput placeholder='Password' secureTextEntry={true} />
-        </View>
-        <View>
-          <Text style={styles.text1}>Forget Password?</Text>
-        </View> */}
         <View style={styles.btn}>
           <Button title='Reset' color={'#ffc700'} onPress={pressHandler1} />
         </View>
         <View>
           <Text style={styles.text}>
-            {' '}
             <Text style={styles.text1} onPress={handleLogin}>
               Back to Login
             </Text>

@@ -19,7 +19,7 @@ export default function Tabnavigation() {
       }}
     >
       <Tab.Screen
-        name='main'
+        name='SkillSage'
         component={base}
         options={{
           tabBarLabel: 'Home',
