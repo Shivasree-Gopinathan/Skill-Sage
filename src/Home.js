@@ -2,6 +2,7 @@ import { Image, StyleSheet, Text, View, ScrollView } from 'react-native'
 
 export default function Home({ navigation }) {
   const pressHandler = () => navigation.navigate('Mentor')
+  const pressHandler1 = () => navigation.navigate('Cpage')
   return (
     <ScrollView style={styles.container}>
       <View style={styles.innercontainer}>
@@ -28,8 +29,12 @@ export default function Home({ navigation }) {
         <View>
           <Image
             source={require('../assets/dashboard2.png')}
-            style={styles.img}
-          />
+            style={styles.img}/>
+        </View>
+        <View>
+          <Text style={styles.text1} onPress={pressHandler1}>
+            Join the community
+          </Text>
         </View>
       </View>
     </ScrollView>
