@@ -11,6 +11,8 @@ import {
 import { Formik } from 'formik'
 import * as Yup from 'yup' 
 
+
+
 const SignupSchema = Yup.object().shape({
   name: Yup.string()
     .min(2, 'Too Short!')
@@ -47,7 +49,7 @@ export default function SignIn({ navigation }) {
       validationSchema={SignupSchema}
       onSubmit={values=>Alert.alert(JSON.stringify(values))}
       >
-        {({values, errors,touched,handleChange,setFieldTouched,isValid,handleSubmit}) => (
+       {/*  {({values, errors,touched,handleChange,setFieldTouched,isValid,handleSubmit}) => (
 
 
        
@@ -59,8 +61,7 @@ export default function SignIn({ navigation }) {
         <View style={styles.innercontainer}>
           <View style={styles.input}>
             <TextInput placeholder='Username' values={values.name} onChangeText={handleChange('name')} onBlur={() => setFieldTouched('name')}/>
-            {
-              touched.name && errors.name && 
+            {touched.name && errors.name && 
               (
               <Text style={styles.errorTxt}>{errors.name}
 
@@ -113,12 +114,96 @@ export default function SignIn({ navigation }) {
         </View>
       </View>
        )}
-      </Formik>
+       */}
+       {({ values, errors, touched, handleChange, setFieldTouched, isValid, handleSubmit }) => (
+      <ScrollView>
+        <View style={styles.container}>
+          <Image source={require('../assets/Login.png')} style={styles.img} />
+          <View>
+            <Text style={styles.headText}>Signup</Text>
+          </View>
+          <View style={styles.innercontainer}>
+            <View style={styles.input}>
+              <TextInput
+                placeholder='Username'
+                value={values.name}
+                onChangeText={handleChange('name')}
+                onBlur={() => setFieldTouched('name')}
+              />
+            </View>
+            {/* Display the error message below the input box */}
+            {touched.name && errors.name && <Text style={styles.errorTxt}>{errors.name}</Text>}
+
+            <View style={styles.input}>
+              <TextInput
+                placeholder='Email ID'
+                autoCapitalize='none'
+                value={values.email}
+                onChangeText={handleChange('email')}
+                onBlur={() => setFieldTouched('email')}
+              />
+            </View>
+            {/* Display the error message below the input box */}
+            {touched.email && errors.email && <Text style={styles.errorTxt}>{errors.email}</Text>}
+
+            <View style={styles.input}>
+              <TextInput
+                placeholder='Password'
+                autoCapitalize='none'
+                value={values.password}
+                onChangeText={handleChange('password')}
+                onBlur={() => setFieldTouched('password')}
+              />
+            </View>
+            {/* Display the error message below the input box */}
+            {touched.password && errors.password && (
+              <Text style={styles.errorTxt}>{errors.password}</Text>
+            )}
+
+            <View style={styles.input}>
+              <TextInput
+                placeholder='Confirm Password'
+                autoCapitalize='none'
+                value={values.confirmPassword}
+                onChangeText={handleChange('confirmPassword')}
+                onBlur={() => setFieldTouched('confirmPassword')}
+              />
+            </View>
+            {/* Display the error message below the input box */}
+            {touched.confirmPassword && errors.confirmPassword && (
+              <Text style={styles.errorTxt}>{errors.confirmPassword}</Text>
+            )}
+
+            <View style={styles.btn}>
+              <Button
+                title='Signup'
+                color={isValid ? '#ffc700' : '#a5c9ca'}
+                onPress={pressHandler}
+                disabled={!isValid}
+              />
+            </View>
+            <View>
+              <Text style={styles.text}>
+                Have an account?{' '}
+                <Text style={styles.text1} onPress={handleLogin}>
+                  Login
+                </Text>
+              </Text>
+            </View>
+          </View>
+        </View>
+      </ScrollView>
+    )}
+       </Formik>
     </ScrollView>
   )
 }
 
-const styles = StyleSheet.create({
+/* const styles = StyleSheet.create({
+  errorTxt:{
+    color:'red',
+    marginLeft: 20,
+  },
   container: {
     backgroundColor: '#fff',
   },
@@ -162,4 +247,58 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     width: '100%',
   },
+  inputContainer: {
+    marginVertical: 20,
+    // Remove the padding and border from the input container
+  },
 })
+ */
+const styles = StyleSheet.create({
+  errorTxt: {
+    color: 'red',
+    marginLeft: 2,
+  },
+  container: {
+    backgroundColor: '#fff',
+  },
+  innercontainer: {
+    marginHorizontal: 20,
+  },
+  img: {
+    marginTop: -50,
+    paddingTop: 0,
+  },
+  headText: {
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    marginTop: 20,
+    marginBottom: 10,
+    color: '#006E7F',
+    fontSize: 24,
+    fontWeight: '500',
+  },
+  text: {
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    marginBottom: 30,
+    color: '#006E7F',
+    fontWeight: '300',
+  },
+  text1: {
+    marginLeft: 'auto',
+    color: '#006E7F',
+    fontWeight: '300',
+    textDecorationLine: 'underline',
+  },
+  input: {
+    marginVertical: 10,
+    padding: 10,
+    borderColor: '#ccc',
+    borderWidth: 1,
+  },
+  btn: {
+    marginTop: 10,
+    marginBottom: 20,
+    width: '100%',
+  },
+});
