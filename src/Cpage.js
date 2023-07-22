@@ -1,5 +1,5 @@
 import React,{useState} from "react";
-import{ScrollView,View,text,Statusbar, Dimensions, Image} from 'react-native';
+import{ScrollView,View,Text,Statusbar, Dimensions, Image} from 'react-native';
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StyleSheet } from "react-native";
 
@@ -13,8 +13,14 @@ const WIDTH = Dimensions.get('window').width;
 const HEIGHT = Dimensions.get('window').height;
 export default function Cpage () {
   const [imagActive, setimgActive] = useState(0);
-  onchange = (nativeEvent) => {
 
+  onchange = (nativeEvent) => {
+      if(nativeEvent){
+        const slide = Math.ceil(nativeEvent.contentOffset.x / nativeEvent.layoutMeasurement.width);
+        if(slide != imagActive) {
+          setimgActive(slide);
+        }
+      }
   }
   return (
    <SafeAreaView style={styles.container}>
@@ -39,7 +45,7 @@ export default function Cpage () {
       </ScrollView>
       <View style={styles.wrapDot}>
           {
-            images.map((e, index) => 
+            image.map((e, index) => 
             <Text
               key= {e}
               style={imagActive == index ? styles.dotActive : styles.dot}>
