@@ -8,7 +8,8 @@ import {
 } from 'react-native'
 import React from 'react'
 
-export default Mentor = () => {
+export default Mentor = ({ navigation }) => {
+  const handleConnect = () => navigation.navigate('Connect')
   return (
     <ScrollView style={styles.container}>
       <View style={styles.innercontainer}>
@@ -29,7 +30,9 @@ export default Mentor = () => {
           </View>
           <View>
             <TouchableOpacity style={styles.btn}>
-              <Text style={styles.btntext}>Connect</Text>
+              <Text style={styles.btntext} onPress={handleConnect}>
+                Connect
+              </Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -47,7 +50,9 @@ export default Mentor = () => {
           </View>
           <View>
             <TouchableOpacity style={styles.btn}>
-              <Text style={styles.btntext}>Connect</Text>
+              <Text style={styles.btntext} onPress={handleConnect}>
+                Connect
+              </Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -65,7 +70,9 @@ export default Mentor = () => {
           </View>
           <View>
             <TouchableOpacity style={styles.btn}>
-              <Text style={styles.btntext}>Connect</Text>
+              <Text style={styles.btntext} onPress={handleConnect}>
+                Connect
+              </Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -83,7 +90,9 @@ export default Mentor = () => {
           </View>
           <View>
             <TouchableOpacity style={styles.btn}>
-              <Text style={styles.btntext}>Connect</Text>
+              <Text style={styles.btntext} onPress={handleConnect}>
+                Connect
+              </Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -101,7 +110,9 @@ export default Mentor = () => {
           </View>
           <View>
             <TouchableOpacity style={styles.btn}>
-              <Text style={styles.btntext}>Connect</Text>
+              <Text style={styles.btntext} onPress={handleConnect}>
+                Connect
+              </Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -119,7 +130,9 @@ export default Mentor = () => {
           </View>
           <View>
             <TouchableOpacity style={styles.btn}>
-              <Text style={styles.btntext}>Connect</Text>
+              <Text style={styles.btntext} onPress={handleConnect}>
+                Connect
+              </Text>
             </TouchableOpacity>
           </View>
         </View>

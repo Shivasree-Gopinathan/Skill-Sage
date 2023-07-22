@@ -9,6 +9,7 @@ import Tabnav from '../routes/Tabnavigation'
 import Resetpassword from '../src/Resetpassword'
 import Cpage from '../src/Cpage'
 import Detail from '../src/Detail'
+import ConnectMentor from '../src/ConnectMentor'
 
 const Stack = createNativeStackNavigator()
 
@@ -29,6 +30,7 @@ export default function AuthStack() {
       <Stack.Screen name='ResetPassword' component={Resetpassword} />
       <Stack.Screen name='Cpage' component={Cpage} />
       <Stack.Screen name='Detail' component={Detail} />
+      <Stack.Screen name='Connect' component={ConnectMentor}/>
     </Stack.Navigator>
   )
 }
