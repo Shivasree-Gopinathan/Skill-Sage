@@ -6,6 +6,7 @@ import {
   Image,
   ScrollView,
   FlatList,
+  Button,
 } from 'react-native'
 import React from 'react'
 import courses from '../routes/CoursesApi'
@@ -22,6 +23,9 @@ export default function Courses({ navigation }) {
           >
             {item.title}
           </Text>
+          {/* <View style={styles.btn}>
+            <Button title='Check Course' color={'#ffc700'} />
+          </View> */}
         </View>
       </View>
     )
@@ -82,18 +86,13 @@ export default function Courses({ navigation }) {
 const styles = StyleSheet.create({
   mainContainer: {
     paddingHorizontal: 20,
-    // paddingVertical: 10,
   },
   listContainer: {
     backgroundColor: '#006e7f',
-    backgroundColor: 'rgba(225,225,225,0.9)',
-    // marginHorizontal: 16,
-    marginVertical: 30,
-    // borderRadius: 6,
-    // paddingBottom: 16,
+    marginVertical: 20,
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: 5,
+    borderRadius: 10,
     shadowColor: 'grey',
     shadowOffset: { width: 0, height: 0 },
     shadowOpacity: 0.5,
@@ -109,12 +108,18 @@ const styles = StyleSheet.create({
     width: '100%',
     height: undefined,
     aspectRatio: 1,
-    marginTop: -40,
+    borderRadius: 8,
   },
   text: {
     color: '#fff',
     fontSize: 18,
     marginTop: -40,
-    // fontStyle: 'italic',
+    fontStyle: 'italic',
+    textDecorationLine: 'underline',
   },
+  // btn: {
+  //   marginTop: 30,
+  //   marginBottom: 10,
+  //   maxWidth: 250,
+  // },
 })
