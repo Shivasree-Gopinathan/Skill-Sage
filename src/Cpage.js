@@ -1,3 +1,4 @@
+import { Linking } from 'react-native';
 import React, { useState } from "react";
 import { ScrollView, View, Text, StatusBar, Dimensions, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -6,6 +7,12 @@ const image = [
   'https://img.freepik.com/free-vector/flat-university-concept_23-2148176380.jpg?w=1380&t=st=1689970064~exp=1689970664~hmac=5a5ae5faea445eed8af2a3fd7b79d2f52b50daea16b303189bc25ab3f3181e7d',
   'https://img.freepik.com/free-vector/woman-giving-comfort-support-friend_74855-5301.jpg?w=2000&t=st=1689970253~exp=1689970853~hmac=6e688d396fdbb60dc9f7b43fbc4aeb8426ebe3d10445b56248812be57bff1116',
   'https://img.freepik.com/free-vector/family-couple-saving-money_74855-5240.jpg?w=2000&t=st=1689970407~exp=1689971007~hmac=848db56e3fdfdb3cd77e158fdb182b941997eb7f582b9ec6cdfac9c239aed56d',
+];
+
+const imageUrls = [
+  'https://www.uwindsor.ca/openlearning/298/about-us',
+  'https://windsoressex.cmha.ca',
+  'https://debt.canadadebtfree.ca/canada-debt-free/?gad=1&gclid=EAIaIQobChMI8quC2JOjgAMVsQxlCh2eIg-xEAAYASAAEgIYyPD_BwE',
 ];
 
 const WIDTH = Dimensions.get('window').width;
@@ -23,11 +30,17 @@ export default function Cpage() {
     }
   }
 
-  const handleImageClick = (index) => {
-    
-    console.log("Image clicked: ", index);
-  }
+  /* ß */
 
+  const handleImageClick = (index) => {
+    if (index >= 0 && index < imageUrls.length) {
+      const url = imageUrls[index];
+      Linking.openURL(url)
+        .catch((error) => console.error("Error opening URL: ", error));
+    } else {
+      console.warn("Invalid index or URL not defined.");
+    }
+  }
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.wrap}>
