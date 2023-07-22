@@ -4,7 +4,7 @@ const Courses = [
     title: 'Software Engineering',
     image: require('../assets/course1.png'),
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras porttitor ante dui, sed ornare augue porta id. Curabitur molestie a diam in malesuada. Vivamus rhoncus mi accumsan, viverra sem nec, mattis elit.',
+      'Software engineering is a method of developing software that is based on engineering. A software engineer is a person who creates, develops, maintains, tests, and assesses computer software using the engineering design process.',
     course1: '1) Introduction to SE',
     course2: '2) Software Development Lifecycle',
     course3: '3) Testing',
@@ -15,7 +15,7 @@ const Courses = [
     title: 'Artificial Intelligence',
     image: require('../assets/course2.jpg'),
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras porttitor ante dui, sed ornare augue porta id. Curabitur molestie a diam in malesuada. Vivamus rhoncus mi accumsan, viverra sem nec, mattis elit.',
+      'Artificial intelligence is the simulation of human intelligence processes by machines, especially computer systems. Specific applications of AI include expert systems, natural language processing, speech recognition and machine vision.',
     course1: 'html',
     price: 1000,
   },
