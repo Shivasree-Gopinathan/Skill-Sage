@@ -6,10 +6,13 @@ import {
   TextInput,
   Button,
   ScrollView,
+  useState,
 } from 'react-native'
 
 export default function Login({ navigation }) {
+  // const [isDisabled, setIsDisabled] = useState(true)
   const pressHandler = () => navigation.navigate('SkillSage')
+  // setIsDisabled(false)
   const handleSignin = () => navigation.navigate('SignIn')
   const handleForgot = () => navigation.navigate('ForgotPassword')
 
@@ -32,7 +35,12 @@ export default function Login({ navigation }) {
             </Text>
           </View>
           <View style={styles.btn}>
-            <Button title='Login' color={'#ffc700'} onPress={pressHandler} />
+            <Button
+              title='Login'
+              color={'#ffc700'}
+              onPress={pressHandler}
+              // disabled={!email || !password}
+            />
           </View>
           <View>
             <Text style={styles.text}>
