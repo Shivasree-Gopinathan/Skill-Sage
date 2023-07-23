@@ -27,8 +27,8 @@ export default function Tabnavigation() {
             <Image
               source={home}
               style={{
-                width: 35,
-                height: 35,
+                width: 30,
+                height: 30,
               }}
             />
           ),
@@ -43,8 +43,8 @@ export default function Tabnavigation() {
             <Image
               source={course}
               style={{
-                width: 35,
-                height: 35,
+                width: 30,
+                height: 30,
               }}
             />
           ),
@@ -59,8 +59,8 @@ export default function Tabnavigation() {
             <Image
               source={profile}
               style={{
-                width: 35,
-                height: 35,
+                width: 30,
+                height: 30,
               }}
             />
           ),

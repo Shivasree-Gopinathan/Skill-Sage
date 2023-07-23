@@ -4,10 +4,19 @@ export default function ForgotPassword({ navigation }) {
   const pressHandler1 = () => navigation.navigate('ResetPassword')
   const handleLogin = () => navigation.navigate('Login')
 
+  const resetPassword = () => {
+    if (!email === null) {
+    } else {
+      alert('Please enter a valid email.')
+    }
+  }
+
   return (
-    
     <View style={styles.container}>
-      <Image source={require('../assets/ForgotPassword.png')} style={styles.img} />
+      <Image
+        source={require('../assets/ForgotPassword.png')}
+        style={styles.img}
+      />
       <View>
         <Text style={styles.headText}>Forgot Password</Text>
       </View>
@@ -22,7 +31,11 @@ export default function ForgotPassword({ navigation }) {
           <Text style={styles.text1}>Forget Password?</Text>
         </View> */}
         <View style={styles.btn}>
-          <Button title='Reset' color={'#ffc700'} onPress={pressHandler1} />
+          <Button
+            title='Reset'
+            color={'#ffc700'}
+            onPress={() => resetPassword()}
+          />
         </View>
         <View>
           <Text style={styles.text}>
@@ -34,14 +47,13 @@ export default function ForgotPassword({ navigation }) {
         </View>
       </View>
     </View>
-    
   )
 }
 
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#fff',
-    flex:1,
+    flex: 1,
   },
   innercontainer: {
     marginHorizontal: 30,
@@ -49,10 +61,10 @@ const styles = StyleSheet.create({
   img: {
     marginTop: 50,
     paddingTop: -50,
-    marginLeft:"auto", 
-    marginRight:"auto",
-    height :300,
-    width:300,
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    height: 300,
+    width: 300,
   },
   headText: {
     marginLeft: 'auto',
