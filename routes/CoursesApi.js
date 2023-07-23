@@ -57,7 +57,10 @@ const Courses = [
     image: require('../assets/course5.png'),
     description:
       'Web development is the work involved in developing a website for the Internet (World Wide Web) or an intranet (a private network).Web development can range from developing a simple single static page of plain text to complex web applications, electronic businesses, and social network services.',
-    course1: '',
+    course1: '1) Full Stack Web Development using Spring Boot & React',
+    course2: '2) The MEAN and MERN Stack Guide',
+    course3: '3) Python and Django Full Stack Web Development',
+    course4: '4) The Web Developer Bootcamp',
     price: 1000,
   },
 ]
