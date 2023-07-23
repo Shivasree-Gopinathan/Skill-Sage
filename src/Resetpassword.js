@@ -3,7 +3,7 @@ import React from 'react'
 import mail from '../assets/mail.png'
 
 export default function Resetpassword({ navigation }) {
-  const pressHandler = () => Linking.openURL('https://accounts.google.com')
+  const pressHandler = () => Linking.openURL('https://mail.google.com')
   const handleLogin = () => navigation.navigate('Login')
 
   return (
