@@ -6,8 +6,17 @@ import {
   TextInput,
   Button,
   ScrollView,
-  useState,
-} from 'react-native'
+} from "react-native";
+import React, { useState } from "react";
+import {
+  onAuthStateChanged,
+  signOut,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  sendPasswordResetEmail,
+} from "firebase/auth";
+
+import { auth } from "./config";
 
 export default function Login({ navigation }) {
   // const [isDisabled, setIsDisabled] = useState(true)
@@ -19,15 +28,24 @@ export default function Login({ navigation }) {
   return (
     <ScrollView>
       <View style={styles.container}>
-        <Image source={require('../assets/Welcome.png')} style={styles.img} />
+        <Image source={require("../assets/Welcome.png")} style={styles.img} />
         <Text style={styles.headText}>Welcome to Skill Sage!!</Text>
         <Text style={styles.text}>Find your perfect mentor within clicks</Text>
         <View style={styles.innercontainer}>
           <View style={styles.input}>
-            <TextInput placeholder='Email ID' />
+            <TextInput
+              placeholder="Email ID"
+              value={email}
+              onChangeText={setEmail}
+            />
           </View>
           <View style={styles.input}>
-            <TextInput placeholder='Password' secureTextEntry={true} />
+            <TextInput
+              placeholder="Password"
+              secureTextEntry={true}
+              value={password}
+              onChangeText={setPassword}
+            />
           </View>
           <View>
             <Text style={styles.text1} onPress={handleForgot}>
@@ -36,15 +54,15 @@ export default function Login({ navigation }) {
           </View>
           <View style={styles.btn}>
             <Button
-              title='Login'
-              color={'#ffc700'}
-              onPress={pressHandler}
-              // disabled={!email || !password}
+              title="Login"
+              color={"#ffc700"}
+              onPress={loginUser}
+              disabled={!email || !password}
             />
           </View>
           <View>
             <Text style={styles.text}>
-              Don't have an account?{' '}
+              Don't have an account?{" "}
               <Text style={styles.text1} onPress={handleSignin}>
                 SignIn
               </Text>
@@ -53,12 +71,12 @@ export default function Login({ navigation }) {
         </View>
       </View>
     </ScrollView>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
     flex: 1,
   },
   innercontainer: {
@@ -66,38 +84,38 @@ const styles = StyleSheet.create({
   },
   img: {
     marginTop: 50,
-    marginLeft: 'auto',
-    marginRight: 'auto',
+    marginLeft: "auto",
+    marginRight: "auto",
     paddingTop: 0,
   },
   headText: {
-    marginLeft: 'auto',
-    marginRight: 'auto',
-    color: '#006E7F',
+    marginLeft: "auto",
+    marginRight: "auto",
+    color: "#006E7F",
     fontSize: 24,
     fontWeight: 500,
   },
   text: {
-    marginLeft: 'auto',
-    marginRight: 'auto',
-    marginBottom: '20%',
-    color: '#006E7F',
+    marginLeft: "auto",
+    marginRight: "auto",
+    marginBottom: "20%",
+    color: "#006E7F",
     fontWeight: 300,
   },
   text1: {
-    marginLeft: 'auto',
-    color: '#006E7F',
+    marginLeft: "auto",
+    color: "#006E7F",
     fontWeight: 300,
-    textDecorationLine: 'underline',
+    textDecorationLine: "underline",
   },
   input: {
     marginVertical: 10,
     padding: 10,
-    borderColor: '#ccc',
+    borderColor: "#ccc",
     borderWidth: 1,
   },
   btn: {
     marginTop: 40,
     marginBottom: 20,
   },
-})
+});

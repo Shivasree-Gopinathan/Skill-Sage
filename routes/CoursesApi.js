@@ -8,6 +8,9 @@ const Courses = [
     course1: '1) Introduction to SE',
     course2: '2) Software Development Lifecycle',
     course3: '3) Testing',
+    link1: 'https://drive.google.com/file/d/18ITUyV6cCiMYNi-AoSEQ6r8jseBPE2Ar/view?usp=sharing.com/file/d/1tc_5JbHd6ydZETgaFeZ_R3RPfrZtuuA4/view?usp=sharing',
+    link2: 'https://drive.google.com/file/d/1ykmdHB_qqrzOSx3TXn-DXl8yHgEs913B/view?usp=sharing',
+    link3: 'https://drive.google.com/file/d/1tc_5JbHd6ydZETgaFeZ_R3RPfrZtuuA4/view?usp=sharing',
     price: 1000,
   },
   {
@@ -20,7 +23,8 @@ const Courses = [
       course2: '2) Master the fundamental principles of AI in learning and apply them with expertise',
       course3: '3) Engage in practical exercises and case studies to effectively use AI tools',
       course4: '4) Set the foundation for seamless AI integration and implementation',
-      course5: '5) Obtain our certification to enhance your profile',      
+      course5: '5) Obtain our certification to enhance your profile',
+      link1: 'https://drive.google.com/file/d/1tc_5JbHd6ydZETgaFeZ_R3RPfrZtuuA4/view?usp=sharing',     
     price: 1000,
   },
   {
