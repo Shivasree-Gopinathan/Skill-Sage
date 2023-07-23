@@ -1,11 +1,26 @@
 import { Image, StyleSheet, Text, View, TextInput, Button } from 'react-native'
 
+import { getAuth, sendPasswordResetEmail } from 'firebase/auth'
+import { useState } from 'react'
+
 export default function ForgotPassword({ navigation }) {
-  const pressHandler1 = () => navigation.navigate('ResetPassword')
+  // const pressHandler1 = () => navigation.navigate('ResetPassword')
   const handleLogin = () => navigation.navigate('Login')
 
+  const [email, setEmail] = useState('')
+  const auth = getAuth()
   const resetPassword = () => {
-    if (!email === null) {
+    if (email != null) {
+      sendPasswordResetEmail(auth, email)
+        .then(() => {
+          alert('Password reset email sent succesfully.')
+          navigation.navigate('ResetPassword')
+        })
+        .catch((error) => {
+          const errorCode = error.code
+          const errorMessage = error.message
+          alert(errorMessage)
+        })
     } else {
       alert('Please enter a valid email.')
     }
@@ -22,7 +37,11 @@ export default function ForgotPassword({ navigation }) {
       </View>
       <View style={styles.innercontainer}>
         <View style={styles.input}>
-          <TextInput placeholder='Email ID' />
+          <TextInput
+            placeholder='Email ID'
+            value={email}
+            onChangeText={setEmail}
+          />
         </View>
         {/* <View style={styles.input}>
           <TextInput placeholder='Password' secureTextEntry={true} />
