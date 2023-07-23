@@ -5,6 +5,7 @@ import {
   Image,
   ScrollView,
   TouchableOpacity,
+  Linking,
 } from 'react-native'
 import React from 'react'
 import CoursesApi from '../routes/CoursesApi'
@@ -27,22 +28,28 @@ export default Detail = ({ navigation, route }) => {
       />
       <View>
         <Text style={styles.subtext}>About Course</Text>
-        <Text style={styles.text1}>{selectedCourse.description}</Text>
+        <Text style={styles.text1} >{selectedCourse.description}</Text>
       </View>
       <Text style={styles.subtext}>Course Content</Text>
       <View style={styles.textcontainer}>
         <TouchableOpacity>
-          <Text style={styles.text}>{selectedCourse.course1}</Text>
+          <Text style={styles.text} onPress={() => {
+              Linking.openURL(selectedCourse.link1);
+            }}>{selectedCourse.course1}</Text>
         </TouchableOpacity>
       </View>
       <View style={styles.textcontainer}>
         <TouchableOpacity>
-          <Text style={styles.text}>{selectedCourse.course2}</Text>
+          <Text style={styles.text} onPress={() => {
+              Linking.openURL(selectedCourse.link2);
+            }}>{selectedCourse.course2} </Text>
         </TouchableOpacity>
       </View>
       <View style={styles.textcontainer}>
         <TouchableOpacity>
-          <Text style={styles.text}>{selectedCourse.course3}</Text>
+          <Text style={styles.text} onPress={() => {
+              Linking.openURL(selectedCourse.link3);
+            }}>{selectedCourse.course3} </Text>
         </TouchableOpacity>
       </View>
     </ScrollView>
