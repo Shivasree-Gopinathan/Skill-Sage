@@ -16,7 +16,11 @@ const Courses = [
     image: require('../assets/course2.jpg'),
     description:
       'Artificial intelligence is the simulation of human intelligence processes by machines, especially computer systems. Specific applications of AI include expert systems, natural language processing, speech recognition and machine vision.',
-    course1: 'html',
+      course1: '1) Understand the potential of AI tools in training',
+      course2: '2) Master the fundamental principles of AI in learning and apply them with expertise',
+      course3: '3) Engage in practical exercises and case studies to effectively use AI tools',
+      course4: '4) Set the foundation for seamless AI integration and implementation',
+      course5: '5) Obtain our certification to enhance your profile',      
     price: 1000,
   },
   {
