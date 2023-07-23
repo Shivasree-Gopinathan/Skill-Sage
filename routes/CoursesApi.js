@@ -5,8 +5,8 @@ const Courses = [
     image: require('../assets/course1.png'),
     description:
       'Software engineering is a method of developing software that is based on engineering. A software engineer is a person who creates, develops, maintains, tests, and assesses computer software using the engineering design process.',
-    course1: '1) Introduction to SE',
-    course2: '2) Software Development Lifecycle',
+    course1: '1) Software Development Lifecycle (SDLC) - Elements of building high-quality software, and writing requirements. ',
+    course2: '2) Design patterns ,structural design, behavioral models, unified modeling language (UML)',
     course3: '3) Testing',
     link1: 'https://drive.google.com/file/d/18ITUyV6cCiMYNi-AoSEQ6r8jseBPE2Ar/view?usp=sharing.com/file/d/1tc_5JbHd6ydZETgaFeZ_R3RPfrZtuuA4/view?usp=sharing',
     link2: 'https://drive.google.com/file/d/1ykmdHB_qqrzOSx3TXn-DXl8yHgEs913B/view?usp=sharing',
