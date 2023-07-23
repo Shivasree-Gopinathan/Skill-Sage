@@ -8,8 +8,10 @@ import {
   FlatList,
   Button,
 } from 'react-native'
+// import { useEffect, useState } from 'react'
 import React from 'react'
 import courses from '../routes/CoursesApi'
+// import { ActivityIndicator } from 'react-native'
 
 export default function Courses({ navigation }) {
   const courseCard = ({ item }) => {
@@ -23,19 +25,29 @@ export default function Courses({ navigation }) {
           >
             {item.title}
           </Text>
-          {/* <View style={styles.btn}>
-            <Button title='Check Course' color={'#ffc700'} />
-          </View> */}
         </View>
       </View>
     )
   }
   return (
+    // <SafeAreaView style={{ backgroundColor: '#fff', flex: 1 }}>
+    //   <View style={{ marginTop: 20, marginHorizontal: '5%' }}>
+    //     <TextInput
+    //       placeholder='Search courses'
+    //       clearButtonMode='always'
+    //       autoCapitalize='none'
+    //       autoCorrect={false}
+    //       style={styles.searchbox}
+    //       value={searchQuery}
+    //       onChangeText={(query) => handleSearch(query)}
+    //     />
+    //   </View>
     <FlatList
       keyExtractor={(item) => item.id}
       data={courses}
       renderItem={courseCard}
     />
+    // </SafeAreaView>
     // <SafeAreaView>
     //   <ScrollView>
     //     <View style={styles.listContainer}>
@@ -116,6 +128,13 @@ const styles = StyleSheet.create({
     marginTop: -40,
     fontStyle: 'italic',
     textDecorationLine: 'underline',
+  },
+  searchbox: {
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+    borderRadius: 8,
+    borderColor: '#ccc',
+    borderWidth: 1,
   },
   // btn: {
   //   marginTop: 30,

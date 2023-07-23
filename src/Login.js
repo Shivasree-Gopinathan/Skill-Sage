@@ -19,29 +19,12 @@ import {
 import { auth } from "./config";
 
 export default function Login({ navigation }) {
-  
-  const handleSignin = () => navigation.navigate("SignIn");
-  const handleForgot = () => navigation.navigate("ForgotPassword");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState(null);
-  const loginUser = async () => {
-    try {
-      await signInWithEmailAndPassword(auth, email, password);
-      navigation.navigate("SkillSage");
-    } catch (error) {
-      if (
-        error.code === "auth/invalid-email" ||
-        error.code === "auth/wrong-password"
-      ) {
-        setError("Your email or password was incorrect");
-      } else if (error.code === "auth/email-already-in-use") {
-        setError("An account with this email already exists");
-      } else {
-        setError("There was a problem with your request");
-      }
-    }
-  };
+  // const [isDisabled, setIsDisabled] = useState(true)
+  const pressHandler = () => navigation.navigate('SkillSage')
+  // setIsDisabled(false)
+  const handleSignin = () => navigation.navigate('SignIn')
+  const handleForgot = () => navigation.navigate('ForgotPassword')
+
   return (
     <ScrollView>
       <View style={styles.container}>
