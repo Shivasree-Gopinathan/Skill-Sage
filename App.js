@@ -1,14 +1,13 @@
-import { StyleSheet } from 'react-native'
-import Navigator from './routes/homestack.js'
+import { NavigationContainer } from '@react-navigation/native'
+import AuthStack from './routes/AuthStack.js'
+import { SafeAreaProvider } from 'react-native-safe-area-context'
 
 export default function App() {
-  return <Navigator />
+  return (
+    <SafeAreaProvider>
+      <NavigationContainer>
+        <AuthStack />
+      </NavigationContainer>
+    </SafeAreaProvider>
+  )
 }
-
-const styles = StyleSheet.create({
-  body: {
-    backgroundColor: '#fff',
-    margin: 0,
-    padding: 0,
-  },
-})
