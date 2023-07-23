@@ -31,8 +31,13 @@ const Courses = [
     id: '3',
     title: 'Machine Learning',
     image: require('../assets/course3.jpg'),
-    description: 'Machine learning (ML) is an umbrella term for solving problems for which development of algorithms by human programmers would be cost-prohibitive, and instead the problems are solved by helping machines',
-    course1: 'Modern-day machine learning has two objectives, one is to classify data based on models which have been developed, the other purpose is to make predictions for future outcomes based on these models. A hypothetical algorithm specific to classifying data may use computer vision of moles coupled with supervised learning in order to train it to classify the cancerous moles. A machine learning algorithm for stock trading may inform the trader of future potential predictions. Performing machine learning can involve creating a model, which is trained on some training data and then can process additional data to make predictions. Various types of models have been used and researched for machine learning systems.',
+    description: 
+      'Machine learning (ML) is an umbrella term for solving problems for which development of algorithms by human programmers would be cost-prohibitive, and instead the problems are solved by helping machines',
+      course1: '1)Begineers guide to Machine Learning',
+      course2: '2)Architecting Machine Learning Solutions',
+      course3: '3)Designing Data Preparation and Processing Systems',
+      course4: '4)Developing Machine Learning Models and Orchestrating ML Pipelines',
+      course5: '5)Monitoring, Optimizing and Maintaining ML Solutions',
     price: 1000,
   },
   {
