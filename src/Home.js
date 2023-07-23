@@ -21,15 +21,16 @@ export default function Home({ navigation }) {
             style={styles.img}
           />
         </View>
-        <View>
-          <Text style={styles.text1} onPress={pressHandler}>
+        <View style={styles.card}>
+          <Text style={styles.cardText} onPress={pressHandler}>
             Check out your mentors
           </Text>
-        </View>
-        <View>
-          <Image
-            source={require('../assets/dashboard2.png')}
-            style={styles.img}/>
+          <View>
+            <Image
+              source={require('../assets/findmentor.jpg')}
+              style={styles.img2}
+            />
+          </View>
         </View>
         <View>
           <Text style={styles.text1} onPress={pressHandler1}>
@@ -54,6 +55,33 @@ const styles = StyleSheet.create({
     marginLeft: 'auto',
     marginRight: 'auto',
     marginVertical: 20,
+  },
+  img2: {
+    paddingTop: 0,
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    // marginVertical: 20,
+    width: '100%',
+    height: 300,
+    borderRadius: 100,
+    // borderBottomLeftRadius: 10,
+    // borderBottomRightRadius: 10,
+  },
+  card: {
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: '#ccc',
+    backgroundColor: '#006e7f',
+    padding: 10,
+  },
+  cardText: {
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    color: '#006E7F',
+    fontSize: 20,
+    fontWeight: 300,
+    // textDecorationLine: 'underline',
+    color: '#ffc700',
   },
   headText: {
     marginRight: 'auto',
