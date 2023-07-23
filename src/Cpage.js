@@ -4,7 +4,7 @@ import { ScrollView, View, Text, StatusBar, Dimensions, Image, StyleSheet, Touch
 import { SafeAreaView } from "react-native-safe-area-context";
 
 const image = [
-  'https://img.freepik.com/free-vector/flat-university-concept_23-2148176380.jpg?w=1380&t=st=1689970064~exp=1689970664~hmac=5a5ae5faea445eed8af2a3fd7b79d2f52b50daea16b303189bc25ab3f3181e7d',
+  'https://img.freepik.com/free-vector/hand-drawn-people-starting-business-project_23-2148843028.jpg?w=2000&t=st=1690140869~exp=1690141469~hmac=022e4e8c921cda03edb77f0f8c7a37daa095f0ba056dec6efb64c062b68be88b',
   'https://img.freepik.com/free-vector/woman-giving-comfort-support-friend_74855-5301.jpg?w=2000&t=st=1689970253~exp=1689970853~hmac=6e688d396fdbb60dc9f7b43fbc4aeb8426ebe3d10445b56248812be57bff1116',
   'https://img.freepik.com/free-vector/family-couple-saving-money_74855-5240.jpg?w=2000&t=st=1689970407~exp=1689971007~hmac=848db56e3fdfdb3cd77e158fdb182b941997eb7f582b9ec6cdfac9c239aed56d',
 ];
@@ -13,6 +13,17 @@ const imageUrls = [
   'https://www.uwindsor.ca/openlearning/298/about-us',
   'https://windsoressex.cmha.ca',
   'https://debt.canadadebtfree.ca/canada-debt-free/?gad=1&gclid=EAIaIQobChMI8quC2JOjgAMVsQxlCh2eIg-xEAAYASAAEgIYyPD_BwE',
+];
+
+const imageTexts = [
+  'Education Community',
+  'Mental Health',
+  'Finanacial Help',
+];
+const paragraphs = [
+  '"Educate, Elevate, Empower!"',
+  '"Nurturing Minds, Healing Hearts."',
+  '"Building Brighter Futures, Together."',
 ];
 
 const WIDTH = Dimensions.get('window').width;
@@ -57,8 +68,13 @@ export default function Cpage() {
                 style={styles.image}
                 source={{ uri: e }}
               />
+              <View style={styles.overlay}>
+              <Text style={styles.imageText}>{imageTexts[index]}</Text>
+              <Text style={styles.paragraph}>{paragraphs[index]}</Text>
+              </View>
             </TouchableOpacity>
           ))}
+          
         </ScrollView>
         <View style={styles.wrapDot}>
           {image.map((e, index) => (
@@ -77,20 +93,23 @@ export default function Cpage() {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'darkblue',
+    backgroundColor: '#ffd338',
+    //ffd338 ffe999 fff1bf
     flex: 1
   },
   wrap: {
-    width: WIDTH,
-    height: HEIGHT * 0.75
+    width: WIDTH ,
+    height: HEIGHT * 0.75,
+    position: 'relative',
   },
   image: {
-    width: WIDTH,
-    height: HEIGHT * 0.75
+    borderRadius: 150,
+    width: WIDTH ,
+    height: HEIGHT * 0.65,
   },
   wrapDot: {
     position: "absolute",
-    bottom: 0,
+    bottom: 90,
     flexDirection: 'row',
     alignSelf: 'center'
   },
@@ -101,5 +120,27 @@ const styles = StyleSheet.create({
   dot: {
     margin: 3,
     color: '#ccc'
-  }
+  },
+  overlay: {
+    position: 'absolute',
+    bottom: -1, 
+    left: 20, 
+    right: 20, 
+  },
+  imageText: {
+    alignSelf: 'center',
+    color: 'red',
+    fontSize: 35,
+    marginBottom: 10,
+    textAlign: 'center',
+  },
+  paragraph: {
+    color: 'white',
+    fontSize: 20,
+    textAlign: 'center',
+  },
+  
+  scrollViewContent: {
+    alignItems: 'center', 
+  },
 });
