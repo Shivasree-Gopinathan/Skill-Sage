@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
     marginTop: 25,
     marginBottom: 30,
     color: '#006E7F',
-    fontSize: 50,
+    fontSize: 36,
     fontWeight: 500,
   },
   text: {
