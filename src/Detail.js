@@ -9,6 +9,7 @@ import {
 } from 'react-native'
 import React from 'react'
 import CoursesApi from '../routes/CoursesApi'
+import { Button } from 'react-native'
 
 export default Detail = ({ navigation, route }) => {
   const id = route.params.courseId
@@ -50,8 +51,11 @@ export default Detail = ({ navigation, route }) => {
           <Text style={styles.text} onPress={() => {
               Linking.openURL(selectedCourse.link3);
             }}>{selectedCourse.course3} </Text>
-        </TouchableOpacity>
+        </TouchableOpacity>       
       </View>
+      <TouchableOpacity style={styles.button}>
+        <Text style={styles.button}>Enroll</Text>
+      </TouchableOpacity>
     </ScrollView>
   )
 }
@@ -77,11 +81,12 @@ const styles = StyleSheet.create({
     marginLeft: 'auto',
     marginRight: 'auto',
     marginBottom: 10,
+    fontWeight: 'bold',
   },
   text: {
     fontSize: 16,
     fontWeight: 400,
-    color: '#ffc700',
+//    color: '#ffc700',
     color: '#006E7F',
     // marginTop: 10,
   },
@@ -102,4 +107,14 @@ const styles = StyleSheet.create({
     fontSize: 12,
     color: '#808080',
   },
+  button:{
+    alignItems: 'center',
+    backgroundColor: '#006E7F',
+    padding: 5,
+    fontWeight: 'bold',
+    color:'white',
+    fontSize: 18,
+
+    
+  }
 })
