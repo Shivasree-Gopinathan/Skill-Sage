@@ -16,7 +16,7 @@ export default function Home({ navigation }) {
       <View style={styles.innercontainer}>
         <View style={{ flex: 1, flexDirection: 'row' }}>
           <Image
-            source={require('../assets/hello1.gif')}
+            source={require('../assets/hello.png')}
             style={{ width: 50, height: 50, marginLeft: '-5%' }}
           />
           <Text style={styles.headText}>Welcome</Text>
