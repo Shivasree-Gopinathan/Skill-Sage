@@ -16,32 +16,31 @@ import {
   sendPasswordResetEmail,
 } from 'firebase/auth'
 
-
 import { auth } from './config'
 
 export default function SignIn({ navigation }) {
   const isValidEmail = (email) => {
     // Basic email validation using a regular expression
-    const emailRegex = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
-    return emailRegex.test(email);
-  };
-  
+    const emailRegex =
+      /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/
+    return emailRegex.test(email)
+  }
+
   const isValidPassword = (password) => {
     // You can set your desired password validation rules here
-    return password.length >= 6;
-  };
-  
+    return password.length >= 6
+  }
+
   const pressHandler = () => navigation.navigate('Home')
   const handleLogin = () => navigation.navigate('Login')
-  const [email, setEmail] = useState(
-    {
+  const [email, setEmail] = useState({
     isValidUser: true,
     isValidPassword: true,
-    })
+  })
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
   const [error, setError] = useState(null)
-/*   const createAccount = async () => {
+  /*   const createAccount = async () => {
     try {
       if (password === confirmPassword) {
         await createUserWithEmailAndPassword(auth, email, password)
@@ -54,34 +53,33 @@ export default function SignIn({ navigation }) {
       alert(e.message)
     }
   } */
-  
+
   const createAccount = async () => {
     try {
       if (!isValidEmail(email)) {
-        setError('Invalid Email');
+        setError('Invalid Email')
       } else if (!isValidPassword(password)) {
-        setError('Password should be at least 6 characters long');
+        setError('Password should be at least 6 characters long')
       } else if (password !== confirmPassword) {
-        setError("Passwords don't match");
+        setError("Passwords don't match")
       } else {
-        await createUserWithEmailAndPassword(auth, email, password);
-        navigation.navigate('Login');
+        await createUserWithEmailAndPassword(auth, email, password)
+        navigation.navigate('Login')
       }
     } catch (e) {
-      setError('There was a problem creating your account');
-      alert(e.message);
+      setError('There was a problem creating your account')
+      alert(e.message)
     }
-  };
-  
+  }
+
   const handleEmailChange = (text) => {
     setEmail({
       ...email,
       value: text,
       isValidUser: isValidEmail(text), // Set the correct isValidUser value based on email validation
-    });
-  };
-  
-  
+    })
+  }
+
   return (
     <ScrollView style={{ flex: 1, backgroundColor: '#fff' }}>
       <View style={styles.container}>
@@ -97,15 +95,13 @@ export default function SignIn({ navigation }) {
               onChangeText={handleEmailChange}
             />
           </View>
-         
-          
- {!email.isValidUser && email.value.trim() !== '' && (
-  <View>
-    <Text style={styles.errorMsg}>Invalid Email</Text>
-  </View>
-)}
 
-  
+          {!email.isValidUser && email.value.trim() !== '' && (
+            <View>
+              <Text style={styles.errorMsg}>Invalid Email</Text>
+            </View>
+          )}
+
           <View style={styles.input}>
             <TextInput
               placeholder='Password'
@@ -113,11 +109,13 @@ export default function SignIn({ navigation }) {
               onChangeText={setPassword}
             />
           </View>
-          {!isValidPassword(password) && (
-  <View>
-    <Text style={styles.errorMsg}>Password should be at least 6 characters long</Text>
-  </View>
-)}
+          {password.trim() !== '' && !isValidPassword(password) && (
+            <View>
+              <Text style={styles.errorMsg}>
+                Password should be at least 6 characters long
+              </Text>
+            </View>
+          )}
           <View style={styles.input}>
             <TextInput
               placeholder='Confirm Password'
@@ -126,10 +124,10 @@ export default function SignIn({ navigation }) {
             />
           </View>
           {password !== confirmPassword && (
-  <View>
-    <Text style={styles.errorMsg}>Passwords don't match</Text>
-  </View>
-)}
+            <View>
+              <Text style={styles.errorMsg}>Passwords don't match</Text>
+            </View>
+          )}
           <View style={styles.btn}>
             <Button
               title='Signup'
