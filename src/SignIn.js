@@ -8,29 +8,11 @@ import {
   ScrollView,
 } from 'react-native'
 import React, { useState } from 'react'
-import {
-  onAuthStateChanged,
-  signOut,
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  sendPasswordResetEmail,
-} from 'firebase/auth'
+import { createUserWithEmailAndPassword } from 'firebase/auth'
 
 import { auth } from './config'
 
 export default function SignIn({ navigation }) {
-  const isValidEmail = (email) => {
-    // Basic email validation using a regular expression
-    const emailRegex =
-      /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/
-    return emailRegex.test(email)
-  }
-
-  const isValidPassword = (password) => {
-    // You can set your desired password validation rules here
-    return password.length >= 6
-  }
-
   const pressHandler = () => navigation.navigate('Home')
   const handleLogin = () => navigation.navigate('Login')
   const [email, setEmail] = useState({
@@ -40,31 +22,36 @@ export default function SignIn({ navigation }) {
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
   const [error, setError] = useState(null)
-  /*   const createAccount = async () => {
-    try {
-      if (password === confirmPassword) {
-        await createUserWithEmailAndPassword(auth, email, password)
-        navigation.navigate('Login')
-      } else {
-        setError("Passwords don't match")
-      }
-    } catch (e) {
-      setError('There was a problem creating your account')
-      alert(e.message)
-    }
-  } */
+
+  // const isValidEmail = (email) => {
+  //   const emailRegex =
+  //     /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/
+  //   return emailRegex.test(email)
+  // }
+  const isValidEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    return emailRegex.test(email)
+  }
+
+  const isValidPassword = (password) => {
+    return password.length >= 6
+  }
 
   const createAccount = async () => {
     try {
-      if (!isValidEmail(email)) {
+      if (isValidEmail(email)) {
         setError('Invalid Email')
+        // console.log('Done...e')
       } else if (!isValidPassword(password)) {
+        // console.log('Done...pas')
         setError('Password should be at least 6 characters long')
       } else if (password !== confirmPassword) {
         setError("Passwords don't match")
+        // console.log('Done...pas1')
       } else {
-        await createUserWithEmailAndPassword(auth, email, password)
+        await createUserWithEmailAndPassword(auth, email.value, password)
         navigation.navigate('Login')
+        // console.log('Done...c')
       }
     } catch (e) {
       setError('There was a problem creating your account')
@@ -85,7 +72,7 @@ export default function SignIn({ navigation }) {
       <View style={styles.container}>
         <Image source={require('../assets/Login.png')} style={styles.img} />
         <View>
-          <Text style={styles.headText}>Signup</Text>
+          <Text style={styles.headText}>Sign Up</Text>
         </View>
         <View style={styles.innercontainer}>
           <View style={styles.input}>
@@ -130,7 +117,7 @@ export default function SignIn({ navigation }) {
           )}
           <View style={styles.btn}>
             <Button
-              title='Signup'
+              title='Sign Up'
               color={'#ffc700'}
               onPress={createAccount}
               disabled={!email || !password || !confirmPassword}
