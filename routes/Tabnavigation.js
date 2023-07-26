@@ -38,7 +38,7 @@ export default function Tabnavigation() {
         name='Search Course'
         component={look}
         options={{
-          tabBarLabel: 'Search Course',
+          tabBarLabel: 'Explore Course',
           tabBarIcon: ({ color, size }) => (
             <Image
               source={course}

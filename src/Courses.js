@@ -4,14 +4,12 @@ import {
   SafeAreaView,
   StyleSheet,
   Image,
+  TextInput,
   ScrollView,
-  FlatList,
-  Button,
 } from 'react-native'
-// import { useEffect, useState } from 'react'
-import React from 'react'
+import React, { useState } from 'react'
 import courses from '../routes/CoursesApi'
-// import { ActivityIndicator } from 'react-native'
+import Search from './Search'
 
 export default function Courses({ navigation }) {
   const courseCard = ({ item }) => {
@@ -29,69 +27,30 @@ export default function Courses({ navigation }) {
       </View>
     )
   }
+
+  const [input, setInput] = useState('')
+  // console.log(input)
   return (
-    // <SafeAreaView style={{ backgroundColor: '#fff', flex: 1 }}>
-    //   <View style={{ marginTop: 20, marginHorizontal: '5%' }}>
-    //     <TextInput
-    //       placeholder='Search courses'
-    //       clearButtonMode='always'
-    //       autoCapitalize='none'
-    //       autoCorrect={false}
-    //       style={styles.searchbox}
-    //       value={searchQuery}
-    //       onChangeText={(query) => handleSearch(query)}
-    //     />
-    //   </View>
-    <FlatList
-      keyExtractor={(item) => item.id}
-      data={courses}
-      renderItem={courseCard}
-    />
-    // </SafeAreaView>
-    // <SafeAreaView>
-    //   <ScrollView>
-    //     <View style={styles.listContainer}>
-    //       <Image
-    //         source={require('../assets/course1.png')}
-    //         style={{ width: '100%', height: 200 }}
-    //       />
-    //       <Text style={styles.text}>Software Engineering</Text>
-    //     </View>
-    //     <View style={styles.separator}></View>
-    //     <View style={styles.listContainer}>
-    //       <Image
-    //         source={require('../assets/course2.jpg')}
-    //         style={{ width: '100%', height: 200 }}
-    //       />
-    //       <Text style={styles.text}>Artificial Intelligence</Text>
-    //     </View>
-    //     <View style={styles.separator}></View>
-    //     <View style={styles.listContainer}>
-    //       <Image
-    //         source={require('../assets/course3.jpg')}
-    //         style={{ width: '100%', height: 200 }}
-    //       />
-    //       <Text style={styles.text}>Machine Learning</Text>
-    //     </View>
-    //     <View style={styles.separator}></View>
-    //     <View style={styles.listContainer}>
-    //       <Image
-    //         source={require('../assets/course4.jpg')}
-    //         style={{ width: '100%', height: 200 }}
-    //       />
-    //       <Text style={styles.text}>Data Structure and Algorithm</Text>
-    //     </View>
-    //     <View style={styles.separator}></View>
-    //     <View style={styles.listContainer}>
-    //       <Image
-    //         source={require('../assets/course5.png')}
-    //         style={{ width: '100%', height: 200 }}
-    //       />
-    //       <Text style={styles.text}>HTML Course</Text>
-    //     </View>
-    //     <View style={styles.separator}></View>
-    //   </ScrollView>
-    // </SafeAreaView>
+    <SafeAreaView style={{ backgroundColor: '#fff', flex: 1 }}>
+      <View>
+        <ScrollView>
+          <View style={{ marginTop: 20, marginHorizontal: '5%' }}>
+            <TextInput
+              placeholder='Search courses'
+              style={styles.searchbox}
+              value={input}
+              onChangeText={(text) => setInput(text)}
+            />
+          </View>
+          <Search data={courses} input={input} setInput={setInput} />
+          {/* <FlatList
+        keyExtractor={(item) => item.id}
+        data={courses}
+        renderItem={courseCard}
+      /> */}
+        </ScrollView>
+      </View>
+    </SafeAreaView>
   )
 }
 
